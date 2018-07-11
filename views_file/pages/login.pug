@@ -1,0 +1,25 @@
+extends ../layout/pages.pug
+
+block view
+  .container
+    .row.justify-content-center
+      .col-md-8
+        .card-group
+          .card.p-4
+            .card-body
+              h1 Login
+              p.text-muted Sign In to your account
+              .input-group.mb-4
+                .input-group-prepend
+                  span.input-group-text
+                    i.icon-lock
+                input.form-control(type='password', placeholder='Password')
+              .row
+                .col-3
+                  //- script(src="script/aa.js")
+                  button.btn.btn-primary.px-4(type='button' id='login') Login
+                  script.
+                    var loginBtn = document.getElementById('login')
+                    loginBtn.addEventListener('click', ()=> {
+                      location.href="/register"
+                    })
