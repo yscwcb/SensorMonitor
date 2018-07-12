@@ -7,13 +7,13 @@ block view
         .card-group
           .card.p-4
             .card-body
-              h1 Login
-              p.text-muted Sign In to your account
+              h1 채널 선택
+              p.text-muted 확인하고 싶은 채널 번호를 입력하세요
               .input-group.mb-4
                 .input-group-prepend
                   span.input-group-text
                     i.icon-lock
-                input.form-control(type='password', placeholder='Password')
+                input.form-control(type='text', id='channel' placeholder='Channel')
               .row
                 .col-3
                   //- script(src="script/aa.js")
@@ -21,5 +21,11 @@ block view
                   script.
                     var loginBtn = document.getElementById('login')
                     loginBtn.addEventListener('click', ()=> {
-                      location.href="/index"
+                      var channel = document.getElementById('channel').value
+                      if (channel.length > 0) {
+                        location.href="/index/"+channel
+                      }
+                      else {
+                        alert("채널을 입력하지 않았습니다.")
+                      }
                     })

@@ -2,7 +2,7 @@
   nav.sidebar-nav
     ul.nav
       li.nav-item
-        a.nav-link(href=ajax ? 'main.html' : 'index.html')
+        a.nav-link(href=ajax ? 'main' : 'index')
           i.nav-icon.icon-speedometer
           |  Dashboard
           span.badge.badge-primary NEW
@@ -10,7 +10,7 @@
         li.nav-title
           | SensorManager
         li.nav-item
-          a.nav-link(href="colors.html")
+          a.nav-link(href="index?channel=#/colors")
             i.nav-icon.icon-drop
-            |  Temperature
+            |  Graph
 
