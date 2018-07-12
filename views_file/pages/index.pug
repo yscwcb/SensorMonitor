@@ -1,0 +1,42 @@
+extends ../layout/default.pug
+
+block scripts
+  if !starter
+    // Plugins and scripts required by this view
+    script(src='node_modules/chart.js/dist/Chart.min.js')
+    script(src='node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js')
+    script(src='js/main.js')
+
+block view
+    .animated.faidIn
+        .card
+            .card-body
+                .row
+                    .col-sm-5
+                        h4.card-title.mb-0 Traffic
+                        .small.text-muted November 2017
+                    // /.col
+                    .col-sm-7.d-none.d-md-block
+                        button.btn.btn-primary.float-right(type='button')
+                        i.icon-cloud-download
+                        .btn-group.btn-group-toggle.float-right.mr-3(data-toggle='buttons')
+                            label.btn.btn-outline-secondary
+                                input#option1(type='radio', name='options', autocomplete='off')
+                                |  Day
+                            label.btn.btn-outline-secondary.active
+                                input#option2(type='radio', name='options', autocomplete='off', checked='')
+                                |  Month
+                            label.btn.btn-outline-secondary
+                                input#option3(type='radio', name='options', autocomplete='off')
+                                |  Year
+                // /.col
+                // /.row
+            .chart-wrapper(style='height:300px;margin-top:40px;')
+                canvas#main-chart.chart(height='300' margin-top='40')
+            .card-footer
+                .row.text-center
+                .col-sm-12.col-md.mb-sm-2.mb-0
+                    .text-muted Visits
+                    strong 29.703 Users (40%)
+                    .progress.progress-xs.mt-2
+                    .progress-bar.bg-success(role='progressbar', style='width: 40%', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100')

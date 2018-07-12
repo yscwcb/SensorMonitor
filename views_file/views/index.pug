@@ -1,4 +1,4 @@
-extends /default.pug
+extends ../layout/default.pug
 
 block scripts
   if !starter
@@ -34,7 +34,7 @@ block view
             div Members online
           .chart-wrapper.mt-3.mx-3(style='height:70px;')
             canvas#card-chart2.chart(height='70')
-      // /.col
+    // /.col
       .col-sm-6.col-lg-3
         .card.text-white.bg-warning
           .card-body.pb-0

@@ -6,9 +6,9 @@ module.exports = function(express, sqlConn) {
 
         res.render('pages/login', { basedir : './views_file/' });
     });
-    route.get('/register', (req, res) => {
+    route.get('/index', (req, res) => {
         // res.render('/pages/login', { baseDir : './pug/' });
-        res.render('pages/404', { basedir : './views_file/' });
+        res.render('pages/index', { basedir : './views_file/' });
     });
 
     route.post('/data', (req, res) => {
